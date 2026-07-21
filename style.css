@@ -109,4 +109,21 @@ body{
     font-weight: bold;
  }
 
- 
+ input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+ }
+.copy_btn{
+    width: 14rem;
+    height: auto;
+    padding: 10px;
+    font-family: "Neo Sans Pro";
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    color: white;
+    background-color: #c21e1e;
+    border: none;
+    border-radius: 30px;
+}
+
