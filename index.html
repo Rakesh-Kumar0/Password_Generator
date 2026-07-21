@@ -10,8 +10,44 @@
         <h1 class="main_container_heading">Generate Password</h1>
         <div class="pass_container">
             <input type="text" class="password" id="generatedPassword" value="lsjdflkjjfd&^&*^">
-
+            <span class="material_symbols_outlined" onclick="copyPassword()">
+                content_copy
+            </span>
+            <span class="material-symbols-outlined" onclick="generateNewPassword">
+                autorenew
+            </span>
         </div>
+        <div class="pass_properties">
+            <h3>Customize your password</h3>
+            <div class="properties">
+                <div class="length">
+                    <label for="length">Password Length</label><br>
+                    <div>
+                        <input type="number" id="textInput" value="" min="1" max="50" onchange="updateRangeInput(this.value)">
+                        <input type="range" id="rangeInput" name="rangeInput" value="" min="1" max="50" onchange="updateTextInput(this.value)">
+                    </div>
+                </div>
+                <div class="alphabets">
+                    <div>
+                        <input type="checkbox" id="lowercase" name="lowercase" checked="true" disabled>
+                        <label for="lowercase">Lowercase</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="uppercase" name="uppercase" checked="true">
+                        <label for="uppercase">Uppercase</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="numbers" name="numbers" checked="true">
+                        <label for="numbers">Numbers</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="symbols" name="sympols" checked="true">
+                        <label for="symbols">Symbols</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="copy_btn">Copy Password</button>
     </div>
 </body>
 </html>
