@@ -1,0 +1,20 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    font-family: "Neo Sans Pro Ultra";
+}
+
+body{
+    background-color: #caedf7;
+    text-align: center; /* if we want to move the content of body*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
