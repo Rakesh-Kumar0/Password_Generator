@@ -50,5 +50,5 @@ function generateNewPassword(){
 function copyPassword(){
     const passwordField = document.getElementById("generatedPassword");
     navigator.clipboard.writeText(passwordField.value);
-    alert('Password copied to clipboard!');
+    alert('Password copied to clipboard!'); // it is for popup
 }
