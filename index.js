@@ -20,12 +20,35 @@ function generateNewPassword(){
     const useLowercase = document.getElementById("lowercase").checked;
     const useNumbers = document.getElementById("numbers").checked;
     const useSymbols = document.getElementById("symbols").checked;
+
+    // Define character sets for password generation
+    const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
+    const numbesChars = '0123456789';
+    const symbolChars = '!@#$%^&*()_+[]{}|;:,.<>?';
+
+    // Combine selected character sets
+    let allChars = '';
+    if(useUppercase) allChars += uppercaseChars;
+    if(useLowercase) allChars += lowercaseChars;
+    if(useNumbers) allChars += numbesChars;
+    if(useSymbols) allChars += symbolChars;
+
+    // Generate the password
+    let password = '';
+    for(let i=0; i<=length; i++){
+        const randomIndex = Math.floor(Math.random() * allChars.length);
+        password +=allChars[randomIndex];
+    }
+
+    // Display the generated password in the input field with ID 'generatedPassword'
+    document.getElementById("generatedPassword").value = password;
+
 }
 
-// Define character sets for password generation
-const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
-const numbesChars = '0123456789';
-const symbolChars = '!@#$%^&*()_+[]{}|;:,.<>?';
-
-
+// Function to copy the generated password to the clipboard
+function copyPassword(){
+    const passwordField = document.getElementById("generatedPassword");
+    navigator.clipboard.writeText(passwordField.value);
+    alert('Password copied to clipboard!');
+}
